@@ -18,6 +18,8 @@ variable "single_nat_gateway" {
 variable "log_kms_key_arn" {
   description = "KMS key ARN for CloudWatch Flow Logs"
   type        = string
+  default  = null
+  nullable = true
 }
 
 variable "tags" {

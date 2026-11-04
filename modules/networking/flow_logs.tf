@@ -2,7 +2,6 @@
 resource "aws_cloudwatch_log_group" "flow_logs" {
   name              = "/aws/vpc/${var.name}/flow-logs"
   retention_in_days = 90
-  kms_key_id        = var.log_kms_key_arn
 
   tags = local.common_tags
 }
