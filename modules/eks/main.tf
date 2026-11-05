@@ -355,6 +355,12 @@ resource "aws_eks_addon" "e_g_addon" {
   resolve_conflicts_on_create = "OVERWRITE"
   resolve_conflicts_on_update = "PRESERVE"
 
+  configuration_values = jsonencode({
+    containerInsights = {
+      enhancedObservability = true
+    }
+  })
+
   depends_on = [
     aws_eks_node_group.e_g_node_group
   ]
