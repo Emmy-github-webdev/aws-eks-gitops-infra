@@ -361,3 +361,10 @@ resource "aws_eks_addon" "e_g_addon" {
 
   tags = var.tags
 }
+
+resource "aws_eks_addon" "pod_identity" {
+  cluster_name = aws_eks_cluster.main.name
+
+  addon_name    = "eks-pod-identity-agent"
+  addon_version = var.pod_identity_agent_version
+}

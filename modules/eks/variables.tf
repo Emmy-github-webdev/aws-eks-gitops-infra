@@ -55,3 +55,8 @@ variable "tags" {
   type    = map(string)
   default = {}
 }
+
+variable "pod_identity_agent_version" {
+  description = "Version of the EKS Pod Identity Agent addon"
+  type        = string
+}
