@@ -38,3 +38,16 @@ resource "aws_ecr_lifecycle_policy" "e_g_lifecycle_policy" {
     }]
   })
 }
+
+resource "aws_ecr_registry_scanning_configuration" "main" {
+  scan_type = "ENHANCED"
+
+  rule {
+    scan_frequency = "CONTINUOUS_SCAN"
+
+    repository_filter {
+      filter      = "*"
+      filter_type = "WILDCARD"
+    }
+  }
+}
